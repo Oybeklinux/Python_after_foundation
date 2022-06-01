@@ -1,3 +1,4 @@
+
 # 15. Pdf bilan ishlash
 # ```commandline
 # pip install pypdf2

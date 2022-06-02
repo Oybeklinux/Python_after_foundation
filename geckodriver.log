@@ -1,0 +1,15 @@
+1654163928891	geckodriver	INFO	Listening on 127.0.0.1:59681
+1654163931990	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59682" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\oybek\\AppData\\Local\\Temp\\rust_mozprofilexDXz40"
+1654163933457	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:59682
+1654163939869	geckodriver	INFO	Listening on 127.0.0.1:59700
+1654163942930	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59701" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\oybek\\AppData\\Local\\Temp\\rust_mozprofileKSRp6x"
+1654163943742	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:59701
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\oybek\\AppData\\Local\\Temp\\rust_mozprofileKSRp6x\\search.json.mozlz4", (void 0)))
+1654163948116	Marionette	INFO	Listening on port 59724
+DevTools listening on ws://localhost:59701/devtools/browser/5694d069-0b2c-475a-8a42-e9ffb42eb3cf
+Read port: 59724
+1654163948256	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1654164024436	Marionette	INFO	Stopped listening on port 59724
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.

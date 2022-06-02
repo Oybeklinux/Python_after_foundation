@@ -285,6 +285,121 @@ Natija
 
 ![](images/img_2.png)
 
+15. csv bilan ishlash. Mavjud faylni o'qish va unga o'zgartirish kiritish
+<br>
+16. Bizda mazkur papkada csvfile.csv nomli faly bor. Unda quyidagicha ma'lumot bor:
+
+```text
+1,Bekzodov,Nuriddinov,1989
+2,Otabek,Anvarov,1982
+
+```
+
+Kod
+
+```python
+import csv
+
+file = open('csvfile.csv','r')
+reader = csv.reader(file)
+for line in reader:
+    print(line)
+file.close()
+
+file = open('csvfile.csv','a', newline='')
+writer = csv.writer(file)
+writer.writerow([3,'Jasur','Umarov'])
+file.close()
+```
+Natija:
+
+```text
+1,Bekzodov,Nuriddinov,1989
+2,Otabek,Anvarov,1982
+3,Jasur,Umarov
+
+```
+
+17. Dasturlarni ishga tushirish. Telegram va word fayllarini, browserdan gmail.com sahifasini ishga tushiring
+```python
+import webbrowser
+import subprocess
+
+subprocess.Popen("C:/Users/oybek/AppData/Roaming/Telegram Desktop/Telegram.exe")
+webbrowser.open("https://gmail.com")
+```
+Dastur nomini *hello.py* deb  nomlang
+18. Dasturni exe ga o'girish. 
+```commandline
+pip install pyinstaller
+```
+Kod
+```python
+pyinstaller --onefile hello.py
+```
+Natija:
+
+![](images/img_3.png)
+<br>
+dist papka ichiga kiramiz
+
+![](images/img_4.png)
+
+<br>
+Dasturni do'stlarimizga yuboramiz )
+
+19. Interaktiv dastur. Sochqonchani to'rtburchak bo'ylab 6 marta qiimirlatamiz
+
+```commandline
+pip install pyautogui
+```
+
+Kod
+```python
+import pyautogui
+
+for i in range(6):
+    pyautogui.moveRel(300,0,duration=0.2)
+    pyautogui.moveRel(0, 300, duration=0.2)
+    pyautogui.moveRel(-300, 0, duration=0.2)
+    pyautogui.moveRel(0,-300, duration=0.2)
+```
+20. pyautogui yordamida rasm chizamiz.
+
+```python
+import pyautogui
+import subprocess
+import time
+
+
+subprocess.Popen('C:/Windows/system32/mspaint.exe')
+time.sleep(2)
+# pyautogui.click()
+masofa = 50
+duration = 0.2
+while masofa > 0:
+    pyautogui.dragRel(masofa, 0, duration=duration)
+    masofa -= 5
+    pyautogui.dragRel(0, masofa, duration=duration)
+    pyautogui.dragRel(-masofa, 0, duration=duration)
+    masofa -= 5
+    pyautogui.dragRel(0, -masofa, duration=duration)
+```
+Natija:
+![](images/img_5.png)
+21. Google ga python so'zini avtomat qidiruvga bering
+
+```python
+import webbrowser
+import pyautogui
+import time
+
+webbrowser.open("www.google.com")
+time.sleep(5)
+pyautogui.typewrite("python")
+pyautogui.press("enter")
+```
+![](images/img_6.png)
 
 ## 2. Amaliyot. O'quvchi
 1. inputMenu, inputNum, inputDate, inputTime, inputYesNo, inputEmail funksiyalaridan foydalanib o'zingiz dastur yozing. Ijod qiling
@@ -298,5 +413,9 @@ Natija
 ```
 3. Sahifadan hamma rasmlarni yuklab olish
 4. 'https://kudapizza.herokuapp.com/pizzas/' APIdan mahsulot nomi, narxi, rasmini yuklab, faylda JSON formatda saqlang. Faylda rasm havolasi saqlanadi, yuklangan rasmlar alohida images degan papkada bo'lsin.
-5. 'https://kudapizza.herokuapp.com/pizzas/' APIdan mahsulot nomi ,sanasi, rasm havolasi, kategoruyasini yuklab, excelda saqlang. <br>Agar excel fayl ochiq bo'lsa, dasturda xatolik bo'ladi, shuni oldini oling
+5. 'https://kudapizza.herokuapp.com/pizzas/' APIdan mahsulot nomi ,sanasi, rasm havolasi, kategoruyasini excelda saqlang. <br>Agar excel fayl ochiq bo'lsa, dasturda xatolik bo'ladi, shuni oldini oling
 6. 5-masalada bajarilgandan hosil bo'lgan faylni ochib, ichidagi har bir rasmni borwserda ochsin
+7. 'https://kudapizza.herokuapp.com/pizzas/' APIdan mahsulot nomi ,sanasi, rasm havolasi, kategoruyasini csv faylda saqlang.
+8. Har doim kompyuterni yoqqan paytda nima dasturlar siz kerak bo'lsa, ushalarni python orqali ishga tushiradigan qiling
+9. 8-mashqda hosil bo'lgan dasturni exe ga o'girib, kompyuter yoqilanda avtomat ishga tushiradigan qiling 
+10. Paint da uycha chizing

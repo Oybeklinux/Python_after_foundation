@@ -40,8 +40,8 @@
 
 1. Server va mijoz bilan socket yordamda aloqa o'rnatamiz
 <br>
-
 server
+<br>
 
 ```python
 import socket
@@ -63,6 +63,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
 ```
 
 Mijoz
+<br>
 
 ```python
 import socket

@@ -40,7 +40,9 @@
 
 1. Server va mijoz bilan socket yordamda aloqa o'rnatamiz
 <br>
+
 server
+
 ```python
 import socket
 
@@ -61,6 +63,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
 ```
 
 Mijoz
+
 ```python
 import socket
 
@@ -189,8 +192,6 @@ Avval 1-oqim ishga tushadi va value = 1 bo'ladi, so'ng sleep() hisobiga kutib tu
 ![](images/img_2.png)
 
 2-oqimda ham value=1 bo'ladi. So'ng 1-oqim natijasini value ga yozib qo'yadi
-<br>
-![](images/img_3.png)
 <br>
 So'ng 2-oqim natijasini value ga yozib qo'yadi
 <br>

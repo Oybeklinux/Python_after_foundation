@@ -213,7 +213,7 @@ Natija
 
 
 ### 2.2 Molashuvchan interfeys
-### 2.2.1 BoxLayout
+#### 2.2.1 BoxLayout
 
 
 Layout turlari
@@ -365,7 +365,7 @@ size_hint: None, None
 
 13. Gorizontal pozitsiyasini o'zgartirish
 - Gorizontal hususiyatlar: x, center_x, right
-- Vertikal hususiyatlar: y, center_y, left
+- Vertikal hususiyatlar: y, center_y, bottom
 
 ```text
     #size: "100dp", "100dp"
@@ -442,7 +442,7 @@ Natija
 <br>
 ![](images/img_9.png)
 
-### 2.2.1 AnchorLayout
+#### 2.2.2 AnchorLayout
 
 17. AnchorLayout ga misol
 
@@ -518,6 +518,568 @@ AnchorLayoutMisol:
 Natija
 <br>
 ![](images/img_12.png)
+
+20. Anchorga boshqa misol
+
+```text
+AnchorWindow:
+
+<AnchorWindow>:
+    anchor_x: "right"
+    Button:
+        text: "main app"
+        size_hint: None, None
+        width: "100dp"
+        height: "200dp"
+        color: "red"
+        background_color: "blue"
+        on_press: print("ouch! More gently please")
+```
+
+Natija
+<br>
+
+![](images/img_13.png)
+
+21. AnchorLayout ichida BoxLayout
+
+```text
+AnchorWindow:
+
+<AnchorWindow>:
+    anchor_x: "right"
+    anchor_y: "top"
+    BoxLayout:
+        size_hint: None, None
+        width: "400dp"
+        height: "200dp"
+        Button:
+            text: "button1"
+        Button:
+            text: "button2"
+```
+
+Natija
+<br>
+
+![](images/img_14.png)
+
+#### 2.2.3 GridLayout
+
+
+22. GridLayout ga misol
+
+```text
+GridLayoutWindow:
+
+<GridLayoutWindow@GridLayout>:
+    cols: 4
+    Button:
+        text: "A"
+    Button:
+        text: "B"
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+```
+
+Natija
+<br>
+
+![](images/img_15.png)
+
+23. GridLayout: rows
+
+```text
+GridLayoutWindow:
+
+<GridLayoutWindow@GridLayout>:
+    rows: 3
+    Button:
+        text: "A"
+    Button:
+        text: "B"
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+```
+
+Natija
+<br>
+
+![](images/img_16.png)
+
+23. GridLayout usuni enini o'zgartirish
+
+```text
+GridLayoutWindow:
+
+<GridLayoutWindow@GridLayout>:
+    rows: 3
+    Button:
+        text: "A"
+        size_hint: .5, 1
+    Button:
+        text: "B"
+    Button:
+        text: "C"
+        size_hint: .5, 1
+    Button:
+        text: "D"
+    Button:
+        text: "E"
+        size_hint: .5, 1
+    Button:
+        text: "F"
+```
+
+Natija
+<br>
+
+![](images/img_17.png)
+
+
+24. GridLayout qator bo'yini o'zgartirish
+
+```text
+GridLayoutWindow:
+
+<GridLayoutWindow@GridLayout>:
+    rows: 3
+    Button:
+        text: "A"
+        size_hint: .5, 0.5
+    Button:
+        text: "B"
+        size_hint: 1, 0.5
+    Button:
+        text: "C"
+        size_hint: .5, 1
+    Button:
+        text: "D"
+    Button:
+        text: "E"
+        size_hint: .5, 1
+    Button:
+        text: "F"
+```
+
+Natija
+<br>
+
+![](images/img_18.png)
+
+25. GridLayout ichida mavjud bo'lgan BoxLayout ni joylashtirish
+
+```text
+GridLayoutWindow:
+
+<GridLayoutWindow@GridLayout>:
+    rows: 3
+    Button:
+        text: "A"
+        size_hint: .5, 0.5
+    Button:
+        text: "B"
+        size_hint: 1, 0.5
+    Button:
+        text: "C"
+        size_hint: .5, 1
+    BoxLayoutWidget:
+    Button:
+        text: "E"
+        size_hint: .5, 1
+    Button:
+        text: "F"
+
+```
+
+Natija
+<br>
+
+![](images/img_19.png)
+
+
+#### 2.2.4 StackLayout
+
+Har bir elementni o'lchamini berish mumkin. BaxLayoutdan farqli elementlar bir qancha qatorda joylashadi
+
+26. StackLayout ga misol
+
+```text
+StackLayoutWindow:
+
+
+<StackLayoutWindow>:
+    Button:
+        text: "A"
+        size_hint: 0.5,0.2
+    Button:
+        text: "B"
+        size_hint: 0.5,0.2
+    Button:
+        text: "C"
+        size_hint: 0.2,0.2
+    Button:
+        text: "D"
+        size_hint: 0.2,0.2
+    Button:
+        text: "E"
+        size_hint: 0.2,0.2
+```
+
+Natija
+<br>
+
+![](images/img_20.png)
+
+27. python fayldan qo'shish
+
+```python
+from kivy.app import App
+from kivy.uix.button import Button
+from kivy.uix.stacklayout import StackLayout
+
+class StackLayoutWindow(StackLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        for i in range(1, 10):
+            b = Button(text=str(i), size_hint=(.2, .2))
+            self.add_widget(b)
+
+class MainApp(App):
+    pass
+
+MainApp().run()
+```
+
+
+Natija
+<br>
+
+![](images/img_21.png)
+
+28. Aniq o'lchamli tugmalarni qo'shamiz:
+
+
+```python
+from kivy.app import App
+from kivy.metrics import dp
+from kivy.uix.button import Button
+from kivy.uix.stacklayout import StackLayout
+
+
+class StackLayoutWindow(StackLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        for i in range(1, 10):
+            b = Button(text=str(i), size_hint=(None, None), size=(dp(100), dp(100)))
+            self.add_widget(b)
+
+
+class MainApp(App):
+    pass
+
+MainApp().run()
+```
+
+Natija
+<br>
+
+![](images/img_22.png)
+
+ 29. StackLayout da orientatsiya: quyidagicha bo'ladi 
+<br>
+     Terminlar:
+- l - left
+- r - right
+- b - bottom
+- t - top
+  orientation:
+- "lr-tb" 
+- "rl-tb"
+- "lr-bt"
+- "rl-bt"
+
+30. orientation
+
+```python
+from kivy.app import App
+from kivy.metrics import dp
+from kivy.uix.button import Button
+from kivy.uix.stacklayout import StackLayout
+
+
+class StackLayoutWindow(StackLayout):
+    def __init__(self, **kwargs):
+        self.orientation = "rl-bt"
+        super().__init__(**kwargs)
+        for i in range(1, 10):
+            b = Button(text=str(i), size_hint=(None, None), size=(dp(100), dp(100)))
+            self.add_widget(b)
+
+class MainApp(App):
+    pass
+
+MainApp().run()
+```
+
+Natija
+<br>
+
+![](images/img_23.png)
+
+31. padding. 4ta qiymatdan iborat: left, top, right, bottom
+
+```python
+from kivy.app import App
+from kivy.metrics import dp
+from kivy.uix.button import Button
+from kivy.uix.stacklayout import StackLayout
+
+
+class StackLayoutWindow(StackLayout):
+    def __init__(self, **kwargs):
+        self.orientation = "rl-bt"
+        self.padding = (dp(20), dp(20), dp(20), dp(20))
+        super().__init__(**kwargs)
+        for i in range(1, 10):
+            b = Button(text=str(i), size_hint=(None, None), size=(dp(100), dp(100)))
+            self.add_widget(b)
+
+class MainApp(App):
+    pass
+
+MainApp().run()
+```
+
+Natija
+<br>
+
+![](images/img_24.png)
+
+
+32. spacing. 2ta qiymatdan iborat: horizontal, vertical
+
+```python
+from kivy.app import App
+from kivy.metrics import dp
+from kivy.uix.button import Button
+from kivy.uix.stacklayout import StackLayout
+
+
+class StackLayoutWindow(StackLayout):
+    def __init__(self, **kwargs):
+        self.orientation = "rl-bt"
+        self.padding = (dp(20), dp(20), dp(20), dp(20))
+        self.spacing = (dp(10), dp(20))
+        super().__init__(**kwargs)
+        for i in range(1, 10):
+            b = Button(text=str(i), size_hint=(None, None), size=(dp(100), dp(100)))
+            self.add_widget(b)
+
+class MainApp(App):
+    pass
+
+MainApp().run()
+```
+
+Natija
+<br>
+
+![](images/img_25.png)
+
+33. 100ta tugma qo'shing
+
+```python
+from kivy.app import App
+from kivy.metrics import dp
+from kivy.uix.button import Button
+from kivy.uix.stacklayout import StackLayout
+
+
+class StackLayoutWindow(StackLayout):
+    def __init__(self, **kwargs):
+        self.orientation = "rl-bt"
+        self.padding = (dp(20), dp(20), dp(20), dp(20))
+        self.spacing = (dp(10), dp(20))
+        super().__init__(**kwargs)
+        for i in range(1, 100):
+            b = Button(text=str(i), size_hint=(None, None), size=(dp(100), dp(100)))
+            self.add_widget(b)
+
+class MainApp(App):
+    pass
+
+MainApp().run()
+```
+
+Natija
+<br>
+
+![](images/img_26.png)
+
+Lekin 100 tugmaning hammasi ko'rinmaydi, shuning uchun ScrollView dan foydalanamiz
+
+#### 2.2.6 ScrollView 
+Scroll ishlash uchun biz size_hint orqali o'lchamlarini berishimiz kerak
+
+34. 100 tugmani ko'rinadigan qilib qo'shing
+
+```text
+ScrollViewWindow:
+
+<ScrollViewWindow@ScrollView>
+    StackLayoutWindow:
+        size_hint: 1, None
+        height: 4000
+
+<StackLayoutWindow>:
+
+```
+
+Natija
+<br>
+
+![](images/img_27.png)
+
+35. Balandlikni oyna o'lchamiga qarab moslashadigan(o'zgaradigan) qilish
+
+```text
+ScrollViewWindow:
+
+<ScrollViewWindow@ScrollView>
+    StackLayoutWindow:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<StackLayoutWindow>:
+```
+
+Natija
+<br>
+
+![](images/img_28.png)
+
+#### 2.2.7 PageLayout
+
+36. PageLayout ga yuqoridagi hamma oynalarni joylashtiring
+```text
+PageLayoutWindow:
+
+<PageLayoutWindow@PageLayout>:
+    MainWidget:
+    ScrollViewWindow:
+    StackLayoutWindow:
+    GridLayoutWindow:
+    AnchorWindow:
+    BoxLayoutWidget:
+    MainWidget:
+```
+
+Natija
+<br>
+
+![](images/img_29.png)
+ 
+[Layout haqida ma'lumot](https://kivy.org/doc/stable/gettingstarted/layouts.html)
+
+### Widgets
+#### Button
+
+37. Gridlayoutga Button qo'shamiz
+
+```text
+WidgetsWindow:
+
+<WidgetsWindow@GridLayout>:
+    cols: 3
+    Button:
+        text: "A"
+    Button:
+        text: "B"
+```
+
+Natija
+<br>
+
+![](images/img_30.png)
+
+38. Endi tugmani bosganda boshqa funksiyani ishga tushirsin
+
+```text
+WidgetsWindow:
+
+<WidgetsWindow>:
+    cols: 3
+    Button:
+        text: "A"
+        on_press: root.on_pressed()
+    Button:
+        text: "B"
+
+```
+
+```python
+from kivy.uix.gridlayout import GridLayout
+
+class WidgetsWindow(GridLayout):
+    def on_pressed(self):
+        print("pressed")
+
+# ...
+```
+
+Natija
+<br>
+
+![](images/img_31.png)
+
+39. Tugma bosilgan ikkinchi tugma matni o'zgarsin
+
+```python
+from kivy.app import App
+from kivy.metrics import dp
+from kivy.properties import StringProperty
+from kivy.uix.gridlayout import GridLayout
+
+class WidgetsWindow(GridLayout):
+    my_text = StringProperty("Matn")
+
+    def on_pressed(self):
+        print("pressed")
+        self.my_text = "Tugmani bosdingiz"
+```
+
+```text
+WidgetsWindow:
+
+<WidgetsWindow>:
+    cols: 3
+    Button:
+        text: "A"
+        on_press: root.on_pressed()
+    Button:
+        text: root.my_text
+```
+
+Natija
+<br>
+
+![](images/img_33.png)
+
+
+#### ToggleButton
 
 ### 3. Amaliyot. O'quvchi
 Yuqoridagi kutubhonalardan foydalanib o'zingiz ijod qilib dastur yozing

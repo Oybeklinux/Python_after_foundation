@@ -1,0 +1,85 @@
+WidgetsWindow:
+
+<WidgetsWindow>:
+    cols: 3
+    Button:
+        text: "A"
+        on_press: root.on_pressed()
+    Button:
+        text: root.my_text
+
+
+<PageLayoutWindow@PageLayout>:
+    MainWidget:
+    ScrollViewWindow:
+    StackLayoutWindow:
+    GridLayoutWindow:
+    AnchorWindow:
+    BoxLayoutWidget:
+    MainWidget:
+
+
+<ScrollViewWindow@ScrollView>:
+    StackLayoutWindow:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<StackLayoutWindow>:
+
+<GridLayoutWindow@GridLayout>:
+    rows: 3
+    Button:
+        text: "A"
+        size_hint: .5, 0.5
+    Button:
+        text: "B"
+        size_hint: 1, 0.5
+    Button:
+        text: "C"
+        size_hint: .5, 1
+    BoxLayoutWidget:
+    Button:
+        text: "E"
+        size_hint: .5, 1
+    Button:
+        text: "F"
+
+<AnchorWindow>:
+    anchor_x: "right"
+    anchor_y: "top"
+    BoxLayout:
+        size_hint: None, None
+        width: "400dp"
+        height: "200dp"
+        Button:
+            text: "button1"
+        Button:
+            text: "button2"
+
+
+
+<BoxLayoutWidget>:
+    orientation: "vertical"
+    spacing: "10dp"
+    padding: "20dp"
+    Button:
+        text: "main app"
+        pos: 200, 100
+        color: "red"
+        background_color: "blue"
+        on_press: print("ouch! More gently please")
+    Button:
+        text: "dfds"
+        pos: 100, 200
+
+
+<MainWidget>:
+    Button:
+        text: "main app"
+        pos: 200, 100
+        color: "red"
+        background_color: "blue"
+        on_press: print("ouch! More gently please")
+    Button:
+        text: "dfds"
+        pos: 100, 200

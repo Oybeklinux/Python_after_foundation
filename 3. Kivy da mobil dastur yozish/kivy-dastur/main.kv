@@ -2,11 +2,17 @@ WidgetsWindow:
 
 <WidgetsWindow>:
     cols: 3
+    ToggleButton:
+        text: "ToogleButton"
+        on_state: root.on_state_toggle(self)
     Button:
         text: "A"
         on_press: root.on_pressed()
     Button:
         text: root.my_text
+        font_name: "font\Electrolize-Regular.ttf"
+        font_size: "88dp"
+        color: 1, 0.5, 1, 1
 
 
 <PageLayoutWindow@PageLayout>:

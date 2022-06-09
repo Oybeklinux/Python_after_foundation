@@ -10,10 +10,18 @@ from kivy.uix.gridlayout import GridLayout
 
 class WidgetsWindow(GridLayout):
     my_text = StringProperty("Matn")
+    counter = 0
 
     def on_pressed(self):
+        self.counter += 1
         print("pressed")
-        self.my_text = "Tugmani bosdingiz"
+        self.my_text = str(self.counter)
+
+    def on_state_toggle(self, toggle):
+        if toggle.state == "down":
+            toggle.text = "ON"
+        else:
+            toggle.text = "OFF"
 
 
 class StackLayoutWindow(StackLayout):

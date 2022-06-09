@@ -1076,10 +1076,100 @@ WidgetsWindow:
 Natija
 <br>
 
+![](images/img_32.png)
+
+##### Vazifa
+1. 39-mashqni davom ettiramiz. Birinchi tugmani bosganda, "1" ikkinchi marta bosganda "2" va hak chiqsin
+
+##### Shrift
+40. Tugma shriftini o'zgartiramiz. Buning uchun ttf faylni dasturimiz katalogiga joylashtirib, kv falyha quyidagi o'zgartirishni kiritamiz:
+
+```text
+Button:
+        text: root.my_text
+        font_name: "font\Electrolize-Regular.ttf"
+        font_size: "88dp"
+        color: 1, 0.5, 1, 1
+```
+
+Natija
+<br>
+
 ![](images/img_33.png)
 
-
 #### ToggleButton
+
+41. ToggleButtonga misol
+
+```text
+WidgetsWindow:
+
+<WidgetsWindow>:
+    cols: 3
+    ToggleButton:
+        text: "ToogleButton"
+    Button:
+        text: "A"
+        on_press: root.on_pressed()
+    Button:
+        text: root.my_text
+        font_name: "font\Electrolize-Regular.ttf"
+        font_size: "88dp"
+        color: 1, 0.5, 1, 1
+```
+
+Natija
+<br>
+
+![](images/img_34.png)
+
+42. ToggleButton ni bosganda holatini ekranga chiqaring
+
+```python
+class WidgetsWindow(GridLayout):
+    my_text = StringProperty("Matn")
+    counter = 0
+
+    def on_pressed(self):
+        self.counter += 1
+        print("pressed")
+        self.my_text = str(self.counter)
+
+    def on_state_toggle(self, toggle):
+        print(toggle.state)
+```
+kv fayl
+```text
+WidgetsWindow:
+
+<WidgetsWindow>:
+    cols: 3
+    ToggleButton:
+        text: "ToogleButton"
+        on_state: root.on_state_toggle(self)
+    Button:
+        text: "A"
+        on_press: root.on_pressed()
+    Button:
+        text: root.my_text
+        font_name: "font\Electrolize-Regular.ttf"
+        font_size: "88dp"
+        color: 1, 0.5, 1, 1
+```
+
+Natija
+<br>
+
+![](images/img_35.png)
+
+#### Vazifa 
+2. Tugmani bosganda "ON" ikkinchi marta bosganda "OFF", yana bosganda "ON" va hak bo'lsin
+
+Natija
+<br>
+
+![](images/img_36.png)
+
 
 ### 3. Amaliyot. O'quvchi
 Yuqoridagi kutubhonalardan foydalanib o'zingiz ijod qilib dastur yozing

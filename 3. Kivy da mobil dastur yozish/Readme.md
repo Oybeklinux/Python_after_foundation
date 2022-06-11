@@ -306,7 +306,7 @@ kv.fayl
 BoxLayoutMisol:
 
 <BoxLayoutMisol>:
-    orientation: vertical
+    orientation: "vertical"
     Button:
         text: "Matn 1"
     Button:
@@ -333,17 +333,14 @@ Natija
 ![](images/img_7.png)
 
 Layout o'lcham va pozitsiyalarni o'zi boshqaradi. Shuning uchun ularni yozganda foydasi bo'lmaydi
-10. kv faylda layoutda o'lchamlar bilan ishlash
+<br>
 
-```text
-size_hint: 0.5, 0.5
-```
 
 10. kv faylda layoutda o'lchamlar bilan ishlash
 
 ```text
 #size: "100dp", "100dp"
-size_hint: None, None
+size_hint: 0.8, 0.3
 ```
 11. Bo'yi, enini alohida berish
 
@@ -1172,4 +1169,6 @@ Natija
 
 
 ### 3. Amaliyot. O'quvchi
-Yuqoridagi kutubhonalardan foydalanib o'zingiz ijod qilib dastur yozing
+1. Kalkulyator interfeysini yasash
+2. Kalkulyatorga 4 ta +,-,*,/ amallarini qo'shib ishlatamiz
+

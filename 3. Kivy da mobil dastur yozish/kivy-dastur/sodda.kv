@@ -1,22 +1,43 @@
-AnchorLayoutMisol:
+GridLayoutWindow:
 
-<AnchorLayoutMisol>:
-    #right, left,center
-    anchor_x: "right"
-    #bottom, top, center
-    anchor_y: "top"
+<GridLayoutWindow@GridLayout>:
+    rows: 3
+    AnchorLayoutApp:
+        size_hint: .5, 1
     Button:
-        text: "AnchorLayout"
-        size_hint: .2,.1
+        text: "A"
+    Button:
+        text: "B"
+    Button:
+        text: "C"
+        size_hint: .5, 1
+    Button:
+        text: "D"
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+        size_hint: .5, 1
 
 
+
+<AnchorLayoutApp>:
+    anchor_x: "right"
+    anchor_y: "center"
+    BoxLayout:
+        size_hint: None, None
+        width: "400dp"
+        height: "200dp"
+        Button:
+            text: "button1"
+        Button:
+            text: "button2"
 <BoxLayoutMisol>:
     orientation: "vertical"
     Button:
         text: "Matn 1"
     BoxLayout:
         orientation: "horizontal"
-        spacing: "10dp"
         Button:
             text: "Matn 21"
         Button:

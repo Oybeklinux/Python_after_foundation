@@ -1,0 +1,41 @@
+AnchorLayoutWindow:
+
+<AnchorLayoutWindow@AnchorLayout>:
+    anchor_x: "center"
+    anchor_y: "center"
+    MainWidget:
+
+
+<MainWidget>:
+    cols: 3
+    size_hint: None, None
+    height: "300dp"
+    width: "600dp"
+    BoxLayout:
+        orientation: "vertical"
+        Switch:
+            id: switch
+        TextInput:
+            id: textinput
+            text: "Text"
+        Label:
+            text: textinput.text
+            text_size: textinput.width, None
+    Slider:
+        id: slider
+        min: 0
+        max: 100
+        #on_value: root.change_value(self)
+        orientation: "vertical"
+        value: 50
+        disabled: not switch.active
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: str(int(slider.value))
+            font_size: "100dp"
+            color: 0.3, 0.8, 0.1, 1
+        ProgressBar:
+            max: 100
+            value: slider.value
+

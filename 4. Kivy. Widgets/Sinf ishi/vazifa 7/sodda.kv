@@ -1,0 +1,28 @@
+AnchorLayoutWindow:
+
+<AnchorLayoutWindow@AnchorLayout>:
+    anchor_x: "center"
+    anchor_y: "center"
+    MainWidget:
+
+
+<MainWidget>:
+    cols: 3
+    size_hint: None, None
+    height: "300dp"
+    width: "600dp"
+    Switch:
+        id: switch
+    Slider:
+        id: slider
+        min: 0
+        max: 1000
+        #on_value: root.change_value(self)
+        orientation: "vertical"
+        value: 400
+        disabled: not switch.active
+
+    Label:
+        text: str(int(slider.value))
+        font_size: "100dp"
+        color: 0.3, 0.8, 0.1, 1

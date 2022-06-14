@@ -1172,3 +1172,5 @@ Natija
 1. Kalkulyator interfeysini yasash
 2. Kalkulyatorga 4 ta +,-,*,/ amallarini qo'shib ishlatamiz
 
+
+

@@ -1,0 +1,23 @@
+AnchorLayoutWindow:
+
+<AnchorLayoutWindow@AnchorLayout>:
+    anchor_x: "center"
+    anchor_y: "center"
+    MainWidget:
+
+
+<MainWidget>:
+    cols: 3
+    size_hint: None, None
+    height: "300dp"
+    width: "600dp"
+    ToggleButton:
+        text: "OFF"
+        on_state: root.change_state(self)
+    Button:
+        text: "Increment"
+        on_press: root.increase()
+    Label:
+        text: root.counter
+        font_size: "100dp"
+        color: 0.3, 0.8, 0.1, 1

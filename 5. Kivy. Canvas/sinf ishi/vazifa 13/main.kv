@@ -1,0 +1,22 @@
+CanvasExample10:
+
+    Button:
+        pos: root.width/2-self.width/2, root.height/2-self.height/2 + 100
+        size: dp(100), dp(100)
+        text: "Tepaga"
+        on_press: root.move_top()
+    Button:
+        pos: root.width/2-self.width/2, root.height/2-self.height/2 - 100
+        size: dp(100), dp(100)
+        text: "Pastga"
+        on_press: root.move_bottom()
+    Button:
+        pos: root.width/2-self.width/2 - 100, root.height/2-self.height/2
+        size: dp(100), dp(100)
+        text: "Chapga"
+        on_press: root.move_left()
+    Button:
+        pos: root.width/2-self.width/2 + 100, root.height/2-self.height/2
+        size: dp(100), dp(100)
+        text: "O'ngga"
+        on_press: root.move_right()

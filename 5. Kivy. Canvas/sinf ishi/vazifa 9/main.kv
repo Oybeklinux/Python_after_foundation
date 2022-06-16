@@ -1,0 +1,25 @@
+CanvasExample:
+
+<CanvasExample>:
+    canvas:
+    #:set w 400
+    #:set h 300
+        Color:
+            rgb: 1, 0, 0
+        Line:
+            rectangle: (self.center_x-w/2, self.center_y-h/2, w, h)
+        Color:
+            rgba: 0, 1, 0, .1
+        Line:
+            ellipse: (self.center_x-w/2, self.center_y-h/2, w, h)
+        Ellipse:
+            pos: 10, 300
+            size: dp(100), dp(200)
+        Color:
+            rgb: 0, 0, 1
+        Line:
+            circle: (self.center_x, self.center_y, w/2)
+        Rectangle:
+            pos: 10, 10
+            size: dp(100), dp(200)
+

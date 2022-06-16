@@ -1,0 +1,13 @@
+CanvasExample:
+#:set rec_size dp(200)
+<CanvasExample>:
+    canvas:
+        Rectangle:
+            #pos: dp(100), dp(100)
+            pos: self.center_x - rec_size/2 , self.center_y - rec_size/2
+            size: rec_size, rec_size
+        Ellipse:
+            pos: 10, 200
+            size: rec_size, rec_size / 2 + 200
+        Line:
+            points: (0,0,100,100,100,150,300,150, self.width, self.height)

@@ -1,0 +1,106 @@
+Task7:
+
+<Task7>:
+    Button:
+        pos: self.width, root.height - self.height
+        size: dp(100), dp(100)
+        text: "Gorizontal"
+        on_press: root.move_horizontal()
+    Button:
+        pos: self.width*2+20, root.height - self.height
+        size: dp(100), dp(100)
+        text: "Vertikal"
+        on_press: root.move_vertical()
+
+<Task6>:
+    Button:
+        pos: self.width, root.height - self.height
+        size: dp(100), dp(100)
+        text: "Gorizontal"
+        on_press: root.move_horizontal()
+
+
+<Task5>:
+    Button:
+        pos: root.width/2-self.width/2, root.height/2-self.height/2
+        size: dp(100), dp(100)
+        text: "O'rtaga"
+        on_press: root.move_center()
+    Button:
+        pos: root.width/2-self.width/2, root.height/2-self.height/2 + 100
+        size: dp(100), dp(100)
+        text: "Tepaga"
+        on_press: root.move_top()
+    Button:
+        pos: root.width/2-self.width/2, root.height/2-self.height/2 - 100
+        size: dp(100), dp(100)
+        text: "Pastga"
+        on_press: root.move_bottom()
+    Button:
+        pos: root.width/2-self.width/2 - 100, root.height/2-self.height/2
+        size: dp(100), dp(100)
+        text: "Chapga"
+        on_press: root.move_left()
+    Button:
+        pos: root.width/2-self.width/2 + 100, root.height/2-self.height/2
+        size: dp(100), dp(100)
+        text: "O'ngga"
+        on_press: root.move_right()
+
+#:set rx dp(200)
+#:set ry dp(300)
+
+<Task1>:
+    canvas:
+        Line:
+            points: (rx, ry, rx + 200, ry + 200, rx + 400, ry, rx, ry, rx, 50, rx + 400, 50, rx+400,ry)
+
+
+<Task2@Widget>:
+    #:set bwidth dp(2)
+    canvas:
+        Line:
+            points: (self.width/2, 0, self.width/2, self.height)
+            width: bwidth
+        Line:
+            points: (0, self.height/2, self.width, self.height/2)
+            width: bwidth
+        Line:
+            points: (0, 0, self.width, self.height)
+            width: bwidth
+        Line:
+            points: (0, self.height, self.width, 0)
+            width: bwidth
+
+<Task3@Widget>:
+    #:set ybottom dp(0)
+    #:set ytop dp(100)
+    #:set h dp(100)
+    #:set h1 dp(200)
+    canvas:
+        Line:
+            points: (0,ybottom,self.width/4, ytop, self.width/2, ybottom, self.width*3/4, ytop, self.width, ybottom )
+            width: dp(2)
+        Line:
+            points: (0, ytop+h, self.width/2-self.width/4, ybottom+h, self.width*3/4-self.width/4, ytop+h, self.width-self.width/4, ybottom+h, self.width ,ytop+h)
+            width: dp(2)
+        Line:
+            points: (0,ybottom+h1,self.width/4, ytop+h1, self.width/2, ybottom+h1, self.width*3/4, ytop+h1, self.width, ybottom+h1 )
+            width: dp(2)
+        Line:
+            points: (0, ytop+h+h1, self.width/2-self.width/4, ybottom+h+h1, self.width*3/4-self.width/4, ytop+h+h1, self.width-self.width/4, ybottom+h+h1, self.width ,ytop+h+h1)
+            width: dp(2)
+
+
+
+<Task4@Widget>:
+    canvas:
+    #:set w 400
+    #:set h 400
+        Line:
+            rectangle: (self.center_x-w/2, self.center_y-h/2, w, h)
+        Line:
+            ellipse: (self.center_x-w/2, self.center_y-h/2, w, h)
+        Line:
+            circle: (self.center_x, self.center_y, w/2)
+

@@ -1,0 +1,13 @@
+CanvasExample:
+
+<CanvasExample>:
+    canvas:
+    #:set w 400
+    #:set h 300
+        Line:
+            rectangle: (self.center_x-w/2, self.center_y-h/2, w, h)
+        Line:
+            ellipse: (self.center_x-w/2, self.center_y-h/2, w, h)
+        Line:
+            circle: (self.center_x, self.center_y, w/2)
+

@@ -209,7 +209,7 @@ Endi y_top, y_bottom, masofa1, masofa2 o'zgaruvchilariga har hil qiymat berib ha
 #### Vazifa 
 
 7. 14-mashqni davom ettirib,dumaloq shaklni vertikal borib keladigan qiling
-
+8. Shaklni x va y koordinatsiga qiymat berib, tunmay aylanadigan dastur yozing
 
 
 

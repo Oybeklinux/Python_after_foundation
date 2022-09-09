@@ -1,0 +1,37 @@
+WindowManager:
+    MainWindow:
+
+
+
+<MainWindow>:
+    name: "Mahsulotlar bilan ishlash"
+    MDBoxLayout:
+        spacing: dp(50)
+        orientation: "vertical"
+        padding: (dp(10), dp(10))
+        MDBoxLayout:
+            spacing: dp(20)
+            size_hint: (1, .1)
+
+            MDRectangleFlatButton:
+                text: "Delete"
+                on_press: root.delete_product
+            MDRectangleFlatButton:
+                text: "Add"
+                on_press: root.add_product
+            MDRectangleFlatButton:
+                text: "Update"
+                on_press: root.update_product
+            MDRectangleFlatButton:
+                text: "View"
+                on_press: root.view_product()
+        MDBoxLayout:
+            size_hint: (1, 0.1)
+            spacing: dp(50)
+            MDTextField:
+                hint_text: "Mahsulot nomi"
+            MDTextField:
+                hint_text: "Mahsulot muddati"
+            MDTextField:
+                hint_text: "Mahsulot narxi"
+

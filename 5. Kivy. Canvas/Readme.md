@@ -125,7 +125,7 @@ Endi y_top, y_bottom, masofa1, masofa2 o'zgaruvchilariga har hil qiymat berib ha
 ### 2.4 Line: circle, ellipse, rectangle
 
 7. Line: 
-- circele(x, y, radius)
+- circle(x, y, radius)
 - ellipse(x, y, width, height)
 - rectangle(x, y, width, height)
 
